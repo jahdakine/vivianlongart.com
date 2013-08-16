@@ -1,0 +1,264 @@
+.wrap {
+  overflow: hidden;
+  margin: 30px; 
+}
+.dialog {
+  display:none;
+}
+.box {
+  float: left;
+  position: relative;
+}
+.boxInner {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+  bottom: 30px;
+  /*overflow: hidden;*/
+}
+.boxInner img { 
+  width: 100%;
+  border:none;
+}
+body.no-touch .boxInner:hover, body.touch .boxInner.touchFocus {
+  margin-bottom: 0;
+}
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+.modalDialog > div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+}
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #00d9ff; }
+
+@media only screen and (max-width : 320px) {
+  /* Smartphone portrait view: 1 tile */
+  .close, .opener {
+    display:none;
+  }
+  .modalDialog {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:1;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: auto;
+  }
+  .modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+  .box {
+    width: 100%;
+    padding-bottom: 105%;
+  }
+  img {
+    max-width: 300px;    
+  }
+}
+@media only screen and (max-device-width : 320px) and (orientation: portrait) {
+  /* Smartphone portrait view: 1 tile */
+  .close, .opener {
+    display:none;
+  }
+  .modalDialog {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:1;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: auto;
+  }
+  .modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+  .box {
+    width: 100%;
+    padding-bottom: 105%;
+  }
+  img {
+    max-width: 300px;    
+  }
+}
+@media only screen and (max-width : 480px) and (min-width : 321px) {
+  /* Smartphone landscape view: 2 tiles */ 
+  .close, .opener {
+    display:none;
+  }
+  .modalDialog {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:1;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: auto;
+  }
+  .modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+  .box {
+    width: 50%;
+    padding-bottom: 55%;
+  }
+  img {
+    max-width: 300px;    
+  }  
+}
+@media screen and (max-device-width: 480px) and (orientation: landscape) {
+  .close, .opener {
+    display:none;
+  }
+  .modalDialog {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:1;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: auto;
+  }
+  .modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+  .box {
+    width: 50%;
+    padding-bottom: 55%;
+  }
+  img {
+    max-width: 300px;    
+  }  
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+  /* Tablet view: 3 tiles */
+  .box {
+    width: 33.3%;
+    padding-bottom: 38.3%;
+  }
+  img {
+    max-width: 400px;    
+  }   
+}
+@media only screen and (max-width : 800px) and (min-width : 651px) {
+  /* Small desktop / ipad view: 4 tiles */
+  .box {
+    width: 25%;
+    padding-bottom: 30%;
+  }
+  img {
+    max-width: 600px;    
+  }   
+}
+@media only screen and (max-width : 1050px) and (min-width : 801px) {
+  /* Laptop view: 5 tiles */
+  .box {
+    width: 20%;
+    padding-bottom: 25%;
+  }
+  img {
+    max-width: 750px;    
+  }     
+}
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .box {
+    width: 25%;
+    padding-bottom: 30%;
+  }
+  img {
+    max-width: 600px;    
+  }   
+}
+@media only screen and (max-width : 1250px) and (min-width : 1051px) {
+  /* Large desktop view: 6 tiles */
+  .box {
+    width: 16.6%;
+    padding-bottom: 21.6%;
+  }
+  img {
+    max-width: 900px;    
+  }   
+}
+@media only screen and (min-width : 1251px) {
+  /* XLarge desktop: 7 tiles */
+  .box {
+    width: 14.2%;
+    padding-bottom: 19.2%;
+  }
+  img {
+    max-width: 1000px;    
+  }   
+}
+

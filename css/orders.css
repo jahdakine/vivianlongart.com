@@ -1,0 +1,37 @@
+table.tftable {
+	font-size:12px;
+	color: #333;
+	width:100%;
+	border-width: 1px;
+	border-color: #555;/*#9dcc7a;*/
+	border-collapse: collapse;
+}
+table.tftable th {
+	font-size:12px;
+	background-color:#759043;/*#abd28e;*/
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #555;/*#9dcc7a;*/
+	text-align:left;
+	color: #fff;
+}
+table.tftable tr {
+	background-color:#bdd88b;/*#bedda7;*/
+}
+table.tftable td {
+	font-size:12px;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #bbb;
+}
+tr.d0 td {
+	background-color: #bdd88b; color: black;
+}
+tr.d1 td {
+	background-color: #e5eed4; color: black;
+}
+tr.d2 td {
+	background-color: #fff; color: black;
+}

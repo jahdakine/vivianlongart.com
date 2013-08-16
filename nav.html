@@ -1,0 +1,133 @@
+<nav>
+  <div class="responsive_menu_container responsive_menu_vla_scheme">
+    <!-- Menu Trigger Button -->
+    <label for="menu-dropdown-0" class="toggle_menu_label">Menu</label>
+    <input type="checkbox" class="toggle_menu" id="menu-dropdown-0">
+    <!-- End Menu Trigger Button -->
+    <ul class="responsive_menu">
+      
+      <!-- HOME -->
+      <li>
+        <a href="index.php">Home</a>
+      </li>
+      <!-- GALLERY -->
+      <li>       
+        <label for="gallery" class="parent">Gallery</label>
+        <input type="checkbox" class="dropdown_trigger" id="gallery">
+        <ul>
+          <li>
+            <a href="new-work.php">New Work</a>
+          </li>
+          <!-- PAINTINGS -->
+          <li>
+            <label for="paintings" class="parent_r">Paintings</label>
+            <input type="checkbox" class="dropdown_trigger" id="paintings">
+            <ul>
+              <!-- LANDSCAPES -->
+              <li>
+                <label for="landscapes" class="parent_r">Landscapes</label>
+                <input type="checkbox" class="dropdown_trigger" id="landscapes">
+                <ul>
+                  <!-- OILS -->
+                  <li>
+                    <label for="oils" class="parent_r">Oils</label>
+                    <input type="checkbox" class="dropdown_trigger" id="oils">
+                    <ul>
+                      <li><a href="backyard-series.php">Backyard Series</a></li>
+                    </ul>
+                  </li>
+                  <!-- PASTELS -->
+                  <li>
+                    <label for="pastels" class="parent_r">Pastels</label>
+                    <input type="checkbox" class="dropdown_trigger" id="pastels">
+                    <ul>
+                      <li><a href="sky-series.php">Sky Series</a></li>
+                      <li><a href="seasons-series.php">Seasons Series</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <!-- FIGURATIVE -->
+              <li>
+                <label for="figurative" class="parent">Figurative</label>
+                <input type="checkbox" class="dropdown_trigger" id="figurative">
+                <ul>
+                  <li><a href="nude-series.php">Nude Series</a></li>
+                  <li><a href="butterfly-series.php">Butterfly Series</a></li>
+                </ul>
+              </li>
+              <li><a href="dreams-and-stories.php">Dreams &amp; Stories</a></li>
+              <li><a href="doors-and-windows.php">Doors &amp; Windows</a></li>
+              <li><a href="portraits.php">Portraits</a></li>
+              <li><a href="still-life.php">Still Life</a></li>
+            </ul>
+          </li>
+          <!-- PRINTS -->
+          <li>
+            <label for="prints" class="parent_r">Prints</label>
+            <input type="checkbox" class="dropdown_trigger" id="prints">
+            <ul>
+              <li>
+                <a href="butterfly-series2.php">Butterfly Series</a>
+              </li>      
+              <li>
+                <a href="skin-of-the-oak-series.php">Skin of the Oak Series</a>
+              </li>     
+            </ul>   
+          </li>                 
+          <!-- SCULPTURE -->
+          <li>
+            <a href="sculpture.php">Sculpture</a>
+          </li>
+          <!-- WOODWORKING -->
+          <li>
+             <a href="woodwork.php">Woodwork</a>
+          </li>
+          <!-- JEWELRY -->
+          <li>
+            <a href="jewelry.php">Jewelry</a>
+          </li> 
+          <!-- PHOTOGRAPHY -->
+          <li>
+            <a href="photography.php">Photography</a>
+          </li>                                                                                  
+        </ul>
+      </li>
+      <!-- EDITIONS -->
+      <li>
+        <label for="editions" class="parent">Editions</label>
+        <input type="checkbox" class="dropdown_trigger" id="editions">
+        <ul>
+          <li>
+            <a href="prints.php">Prints</a>
+          </li>
+          <li>
+            <a href="book.php">Book</a>
+          </li>
+        </ul>
+      </li>
+      <!-- EXTRAS -->
+      <li>
+        <a href="extras.php">Extras</a>
+      </li>
+      <!-- ORDERS -->
+      <li>
+        <a href="orders-and-shipping.php">Orders/Shipping</a>
+      </li>      
+      <!-- CONTACT -->
+      <li>
+        <a href="contact.php">Contact</a>
+      </li>
+      <? 
+        $test = basename($_SERVER['PHP_SELF']);
+        if ( $test[0] == '_' && basename($_SERVER['PHP_SELF']) != '_administrator.php') :
+          echo "
+            <li>
+              <a href='_administrator.php'>Administration</a>
+            </li>   
+          ";
+        endif ;
+      ?>
+    </ul>
+  </div>
+</nav>

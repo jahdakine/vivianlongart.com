@@ -1,0 +1,81 @@
+<!-- MAIN -->
+	<div id="main-content">	
+		<h2 class="half-top center">Artworks Purchase &amp; Shipping Request Form</h2>
+		<section>
+			<aside class="callout shade5 half-top">
+				<p class="no-top">Shipping prices for artwork vary according to weight, size, method and distance shipped
+					and can only be accurately quoted after packaging the artwork. For sample shipping
+					prices, please go to <a class="content" href="orders-and-shipping.php" target="_blank" title="Open Orders &amp; Shipping in a new tab/window.">Orders/Shipping</a>.
+				</p>
+				<p>Although this form is the most reliable way to find out about this particular artwork, you may call 3zero3-2five8-3seven2seven and speak to the artist, or leave a message.</p>
+			</aside>
+			<form method="post" action="<?= htmlentities($_SERVER['PHP_SELF']); ?>" class="one-top">
+				<section class="callout shade1">
+					<p class="demoted center">*All fields are required</p>
+					<div class="callout shade0 to-right" id="img">
+						<img src="<?= $image; ?>" alt="Image of painting entitled: <?= $title; ?>" style="width:100%" />
+					</div>
+					<div>
+						<label for="name" id="formstart">Name</label>:<br/>
+						<input type="text" name="name" id="name" size="30" maxlength="30" value="<?= isset($name) && $name != " " ? $name : ''; ?>"/>&nbsp;<span class="demoted"></span><br/>
+					</div>
+					<div class="one-top">			
+						<label for="address">Address</label>:<br/>
+						<input type="text" name="address" id="address" size="50" maxlength="50" value="<?= isset($address) && $address != " " ? $address : ''; ?>"/>&nbsp;<span class="demoted"></span><br/>
+					</div>
+					<div class="one-top">
+						<label for="city">City</label>:<br/>
+						<input type="text" name="city" id="city" size="50" maxlength="50" value="<?= isset($city) && $city != " " ? $city : ''; ?>"/>&nbsp;<span class="demoted"></span><br/>
+					</div>
+					<div class="one-top">
+						<label for="state">State</label>:<br/>
+						<select name="state" id="state">
+							<option value="">...</option>
+							<? 
+								foreach ($states as $abbr => $full):
+									isset($state) && $state == "$abbr" ? $selected = 'selected="selected"' : $selected = '';
+									echo '<option value="' .$abbr. '" '. $selected. '>' .$full. '</option>';
+								endforeach;
+							?>
+						</select>
+					</div>
+					<div class="one-top">			
+						<label for="zip">Zip</label>:<br/>
+						<input type="text" name="zip" id="zip" size="10" maxlength="10" value="<?= isset($zip) && $zip != " " ? $zip : ''; ?>"/><span class="demoted">&nbsp;5 or 9 digits, delimit with dash or space</span><br/>
+					</div>									
+					<div class="one-top">			
+						<label for="email">Email</label>:<br/>
+						<input type="text" name="email" id="email" size="50" maxlength="100" value="<?= isset($email) && $email != " " ? $email : ''; ?>"/>&nbsp;<span class="demoted"></span><br/>
+					</div>
+					<div class="one-top">			
+						<label for="phone">Phone</label>:<br/>
+						<input type="text" name="phone" id="phone" size="15" maxlength="25" value="<?= isset($phone) && $phone != " " ? $phone : ''; ?>"/>&nbsp;<span class="demoted">7 or 10 digits, extensions allowed, delimit with spaces, dashes, or periods</span><br/>
+					</div>	
+					<section class="callout one-top shade2">	
+						<h3 class="center">Response Request</h3>
+						<div class="one-top">
+							<input type="radio" name="option" id="option1" value="buy" <?= isset($option) && $option == "buy" ? 'checked="checked"' : ''; ?>/>
+							<label for="option1">
+								I would like to buy "<strong><?= $title; ?></strong>" and would like a total price quote with shipping included.
+							</label>
+						</div>
+						<div class="one-top">
+							<input type="radio" name="option" id="option2" value="info" <?= isset($option) && $option == "info" ? 'checked="checked"' : ''; ?>/>
+							<label for="option2">I would like more information</label><br/>
+							<span id="textarea">
+								<textarea name="info" id="info" rows="3" cols="60"><?= isset($info) && $info != " " ? $info : ''; ?></textarea><br/>
+								<span class="charLeft demoted half-top" id="countCharacter">500 characters left</span>
+							</span>
+						</div>	
+					</section>	
+					<div class="one-top">
+						<button type="submit" name="submit">Send Request</button>
+						<input type="button" name="cancel" onclick="window.location=href='<?= $dirpath; ?>.php';" value="Cancel" />
+					</div>
+				</section>
+				<input type="hidden" name="item" value="<?= htmlspecialchars($_POST['item']); ?>" />
+				<input type="hidden" name="type" value="<?= htmlspecialchars($_POST['type']); ?>" />
+			</form>
+		</section>	
+		<br/>
+	</div> <!-- //end main-content -->

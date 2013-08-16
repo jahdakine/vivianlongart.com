@@ -1,0 +1,495 @@
+/*
+Item Name : Responsive CSS3 Multi Drop Down Menu
+Item URI : http://codecanyon.net/item/responsive-css3-multi-drop-down-menu/4124019
+Author URI : http://codecanyon.net/user/Pixelworkshop
+Version : 1.1
+*/
+
+.responsive_menu_container {
+    width: 100%;
+    margin:0 auto;
+    position: relative;
+    z-index:9999;
+    /*text-shadow:1px 1px 1px #fff;*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.responsive_menu_fixed {
+    width: inherit;
+    position:fixed;
+    top:0;
+    /* IE7 Fix */
+    *width:expression(this.parentNode.currentStyle['width']);
+}
+.responsive_menu_container a,
+.responsive_menu_container label {
+    color: #474747;
+    /*text-shadow:1px 1px 1px #fff;*/
+    cursor: pointer;
+    -webkit-transition:color .3s;
+    -moz-transition:color .3s;
+    -o-transition:color .3s;
+    -ms-transition:color .3s;
+    transition:color .3s;    
+}
+.responsive_menu > li:hover,
+.responsive_menu li li:hover,
+.responsive_menu_container label:hover,
+.responsive_menu_container li:hover,
+.responsive_menu_container li a:hover {
+    color:#fff;
+    background: #759043;
+}
+.responsive_menu {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    *zoom: 1;
+/*    -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(255, 255, 255, 0.5);*/
+}
+/*    .responsive_menu_fixed .responsive_menu {
+-webkit-box-shadow: 0px 1px 1px 0px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 1px 1px 0px rgba(255, 255, 255, 0.5);
+}*/
+.responsive_menu:before,
+.responsive_menu:after {
+    content: " "; 
+    display: table; 
+}
+.responsive_menu:after {
+    clear: both;
+}
+.responsive_menu li {
+    position: relative;
+    -webkit-transition:background .3s;
+    -moz-transition:background .3s;
+    -o-transition:background .3s;
+    -ms-transition:background .3s;
+    transition:background .3s;    
+}
+.responsive_menu > li {
+    float: left;
+    /*padding-right: 15px;*/
+}
+.responsive_menu li > .parent {
+    background-image: url("../assets/down-arrow.png");
+    background-position: 85% 50%; /*rigth 5px top 20px*/
+    background-repeat: no-repeat;
+}
+.responsive_menu li > .parent_r {
+    background-image: url("../assets/down-arrow-r.png");
+    background-position: 85% 50%; /*150px*/
+    background-repeat: no-repeat;
+}
+.responsive_menu li > .parent_l {
+    background-image: url("../assets/down-arrow-l.png");
+    background-position: 85% 50%; /*150px*/
+    background-repeat: no-repeat;
+}
+.responsive_menu a {
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.responsive_menu > li > a {
+    display: block;
+}
+
+/*Main Level*/
+.responsive_menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 100px;
+    background: #d4e7b0;
+}
+.responsive_menu ul li a {
+    display: block;
+    position: relative;
+    z-index:100;    
+}
+.responsive_menu li > label {
+    display: block;
+    padding: 10px 30px 10px 15px;/*10px 20px 10px 15px;*/
+}
+.responsive_menu li li ul,
+.responsive_menu li ul.dropdown_left {
+    top:0;
+}
+.responsive_menu .dropdown_trigger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+/*1st Level*/
+.responsive_menu ul li,
+.responsive_menu ul li a {
+    background: #d4e7b0;
+}
+
+/*2nd Level*/
+.responsive_menu ul li li,
+.responsive_menu ul li li a {
+    background: #d0d8c0;
+}
+
+/*3rd Level*/
+.responsive_menu ul li li li,
+.responsive_menu ul li li li a {
+    background: #dcd3e0;
+}
+
+/*4th Level*/
+.responsive_menu ul li li li li,
+.responsive_menu ul li li li li a {
+    background: #ebe9ec;
+}
+
+/*Color*/
+.responsive_menu_vla_scheme,
+.responsive_menu_vla_scheme .toggle_menu_label {
+    background: #BDD88B;
+    /*background: -webkit-linear-gradient(top, #BDD88B 0%, #759043 100%);
+    background: -moz-linear-gradient(top, #BDD88B 0%, #759043 100%);
+    background: -o-linear-gradient(top, #BDD88B 0%, #759043 100%);
+    background: -ms-linear-gradient(top, #BDD88B 0%, #759043 100%);
+    background: linear-gradient(top, #BDD88B 0%, #759043 100%);*/
+}
+.responsive_menu li ul {
+    position: absolute;
+    top: 60px;
+    left: -999em;
+    opacity:0;
+    visibility:hidden;
+    /*-webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.7);*/
+    display:none;/*\9*/
+}
+.responsive_menu li > ul {
+    -webkit-transition: opacity .2s .2s ease-in-out, top .2s .2s ease-in-out;
+    -moz-transition: opacity .2s .2s ease-in-out, top .2s .2s ease-in-out;
+    -o-transition: opacity .2s .2s ease-in-out, top .2s .2s ease-in-out;
+    -ms-transition: opacity .2s .2s ease-in-out, top .2s .2s ease-in-out;
+    transition: opacity .2s .2s ease-in-out, top .2s .2s ease-in-out;
+}
+.responsive_menu li li > ul {
+    -webkit-transition: opacity .2s .2s ease-in-out;
+    -moz-transition: opacity .2s .2s ease-in-out;
+    -o-transition: opacity .2s .2s ease-in-out;
+    -ms-transition: opacity .2s .2s ease-in-out;
+    transition: opacity .2s .2s ease-in-out;
+}
+
+@media only screen and (max-width : 480px) {
+    /* Smartphone view */
+    /* menu level */
+    .responsive_menu li,
+    .responsive_menu li a {
+        background: #bdd88b; 
+    }
+    /*1st Level*/
+    .responsive_menu ul li,
+    .responsive_menu ul li a {
+        background: #D5E8B1; 
+    }
+
+    /*2nd Level*/
+    .responsive_menu ul li li,
+    .responsive_menu ul li li a {
+        background: #d0d8c0; 
+    }
+
+    /*3rd Level*/
+    .responsive_menu ul li li li,
+    .responsive_menu ul li li li a {
+        background: #dcd3e0;
+    }
+
+    /*4th Level*/
+    .responsive_menu ul li li li li,
+    .responsive_menu ul li li li li a {
+        background: #ebe9ec;
+    }
+      .responsive_menu_container .responsive_menu {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .responsive_menu_container .toggle_menu_label {
+        display: block;
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: #333;
+        color:#bbb;
+    /*  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(255, 255, 255, 0.5);
+        -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(255, 255, 255, 0.5);
+        box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(255, 255, 255, 0.5);*/
+    }
+    .responsive_menu_fixed .toggle_menu_label {
+      -webkit-box-shadow: 0px 1px 1px 0px rgba(255, 255, 255, 0.5);
+        -moz-box-shadow: 0px 1px 1px 0px rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 1px 1px 0px rgba(255, 255, 255, 0.5);
+    }
+    .toggle_menu_label:after {
+        width: 24px;
+        height: 24px;
+        content: url("../assets/toggle.png");
+        float: right;
+    }
+    .toggle_menu,
+    .toggle_menu:checked {
+        width: 100%;
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        height: 40px;
+        margin: 0;
+        opacity: 0;
+    }
+    /* Hiding / showing the menu elements */
+    .responsive_menu {
+        position: absolute;
+        background: #d4e7b0;
+        opacity:0;
+        visibility:hidden;
+        -webkit-transition: opacity .3s ease-in-out;
+        -moz-transition: opacity .3s ease-in-out;
+        -o-transition: opacity .3s ease-in-out;
+        -ms-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+    }
+    .toggle_menu:checked + .responsive_menu {
+        opacity:1;
+        visibility:visible;
+    } 
+    /* Menu Bar & Elements */
+    .responsive_menu li ul {
+        display: block;
+        width: 100%;
+    /*     -webkit-box-shadow: 
+            inset 0px 1px 0px 0px #0f0f0f,
+            inset 0px 2px 1px 0px #202020, 
+            0px 1px 0px 0px #0f0f0f,
+            0px 2px 1px 0px #202020;
+        -moz-box-shadow: 
+            inset 0px 1px 0px 0px #0f0f0f,
+            inset 0px 2px 1px 0px #202020, 
+            0px 1px 0px 0px #0f0f0f,
+            0px 2px 1px 0px #202020;
+        box-shadow: 
+            inset 0px 1px 0px 0px #0f0f0f,
+            inset 0px 2px 1px 0px #202020, 
+            0px 1px 0px 0px #0f0f0f,
+            0px 2px 1px 0px #202020;*/
+    }
+    .responsive_menu > li {
+        padding-right: 0;
+        float: none;
+    }
+    /* Disabling Hover Events */
+    .responsive_menu > li:hover,
+    .responsive_menu li li:hover {
+        background: transparent;
+    }
+    .responsive_menu > li:hover > ul,
+    .responsive_menu li li:hover > ul {
+        opacity:0;
+        left: -999em;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+        -ms-transition: none;
+        transition: none;
+    }
+    /* Placing Arrows */
+    .responsive_menu > li > .parent {
+        background-position: 95% 50%;
+    }
+    .responsive_menu li li .parent,
+    .responsive_menu li li .parent_r,
+    .responsive_menu li li .parent_l {
+        background-image: url("../assets/down-arrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+    /* Threaded Drop Downs */
+    .responsive_menu > li ul {
+        top:auto;
+        left:auto;
+        width:auto;
+        z-index: 999;
+        visibility: visible;
+        /*margin-left: 12px;*/
+    }
+    /* Drop Down Toggle - Animated */
+    .responsive_menu .dropdown_trigger + ul {
+        max-height:0;
+        opacity:0;
+        visibility:hidden;
+        -webkit-transition: opacity .3s ease-in-out;
+        -moz-transition: opacity .3s ease-in-out;
+        -o-transition: opacity .3s ease-in-out;
+        -ms-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+    }
+    .responsive_menu .dropdown_trigger:checked + ul {
+        position: static;
+        max-height:999px;
+        opacity:1;
+        visibility:visible;
+        z-index: 999;
+        -webkit-transition: opacity .3s ease-in-out;
+        -moz-transition: opacity .3s ease-in-out;
+        -o-transition: opacity .3s ease-in-out;
+        -ms-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+   }
+    /* Drop Down Toggle - Not Animated */
+    .responsive_menu .dropdown_trigger + ul {
+        display: none;
+    }
+    .responsive_menu .dropdown_trigger:checked + ul {
+        position: static;
+        display: block;
+    }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+  /* Tablet view */
+    .responsive_menu {
+        font-size: 10px;
+    }
+    .responsive_menu ul {
+        min-width: 110px; /*170px*/
+    }    
+    .responsive_menu > li:hover > ul {
+        top:31px;/*41*/
+        left:auto;
+        visibility:visible;
+        opacity:1;
+        z-index: 999;
+        display:block;/*\9;*/
+    }
+    .responsive_menu li li:hover > ul {
+        left: 100%;
+        visibility:visible;
+        opacity:1;
+        z-index: 999;
+        display:block;/*\9*/
+    }
+    .responsive_menu li li:hover > ul.dropdown_left {
+        left: -100%;
+    }
+    .toggle_menu,
+    .toggle_menu_label {
+        display: none;
+    }
+}  
+@media only screen and (max-width : 1050px) and (min-width : 651px) {    
+  /* Small desktop / ipad view */    
+    .responsive_menu {
+        font-size: 12px;
+    }
+    .responsive_menu ul {
+        min-width: 130px; /*170px*/
+    }      
+    .responsive_menu > li:hover > ul {
+        top:34px;
+        left:auto;
+        visibility:visible;
+        opacity:1;
+        z-index: 999;
+        display:block;/*\9;*/
+    }
+    .responsive_menu li li:hover > ul {
+        left: 100%;
+        visibility:visible;
+        opacity:1;
+        z-index: 999;
+        display:block;/*\9*/
+    }
+    .responsive_menu li li:hover > ul.dropdown_left {
+        left: -100%;
+    }
+    .toggle_menu,
+    .toggle_menu_label {
+        display: none;
+    }       
+    .toggle_menu,
+    .toggle_menu_label {
+        display: none;
+    }    
+}
+@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+  /* Medium desktop */
+    .responsive_menu {
+        font-size: 16px;
+    }
+    .responsive_menu ul {
+        min-width: 170px; /*170px*/
+    }   
+    .responsive_menu > li:hover > ul {
+        top:38px;/*41*/
+        left:auto;
+        visibility:visible;
+        opacity:1;
+        z-index: 999;
+        display:block;/*\9;*/
+    }
+    .responsive_menu li li:hover > ul {
+        left: 100%;
+        visibility:visible;
+        opacity:1;
+        z-index: 999;
+        display:block;/*\9*/
+    }
+    .responsive_menu li li:hover > ul.dropdown_left {
+        left: -100%;
+    }
+    .toggle_menu,
+    .toggle_menu_label {
+        display: none;
+    }
+}  
+@media only screen and (min-width : 1291px) {
+  /*Large  desktop*/
+    .responsive_menu {
+        font-size: 20px;
+    }
+    .responsive_menu ul {
+        min-width: 200px; /*170px*/
+    }   
+    .responsive_menu > li:hover > ul {
+        top:42px;/*41*/
+        left:auto;
+        visibility:visible;
+        opacity:1;
+        z-index: 999;
+        display:block;/*\9;*/
+    }
+    .responsive_menu li li:hover > ul {
+        left: 100%;
+        visibility:visible;
+        opacity:1;
+        z-index: 999;
+        display:block;/*\9*/
+    }
+    .responsive_menu li li:hover > ul.dropdown_left {
+        left: -100%;
+    }
+    .toggle_menu,
+    .toggle_menu_label {
+        display: none;
+    }
+}

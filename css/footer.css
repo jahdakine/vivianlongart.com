@@ -1,0 +1,135 @@
+footer {
+  background-color: #C7CFB8 !important;
+   overflow: hidden; 
+}
+.foot {
+	list-style: none;
+	*zoom: 1;
+	border-top: 3px solid #666;
+}
+.foot a {
+  padding: 10px 15px;
+  color: #474747;
+  text-decoration: none;
+}
+.foot ul {
+  list-style: none;
+  width: 12em;
+}
+.foot:after {
+	clear: both;
+}
+.foot a:hover {
+	background-color: #759043;
+	color: #fff;
+}
+.foot li {
+  position: relative;
+}
+.foot > li {
+  float: left;
+}
+.foot > li > a {
+  display: block;
+}
+.foot li ul {
+  position: absolute;
+  left: -9999px;
+}
+.foot > li.hover > ul {
+  left: 25px;
+}
+.foot li li.hover ul {
+  left: 100%;
+  top: 0;
+}
+.footpad {
+  padding: 10px 15px;
+}
+#share {
+  text-decoration:none;
+  font-size: 16px; 
+  display: table-cell;
+  border: none;
+}
+#shareimg {
+  vertical-align:middle !important;
+}
+/* MEDIA QUERIES */
+@media only screen and (max-width : 480px) {
+  /* Smartphone view */
+  .foot {
+    font-size: 10px;
+  }
+ .foot a, .footpad {
+    padding: 5px 5px;
+  } 
+  .foot li {
+    clear: both;
+    float:none !important;
+  }  
+  #share {
+    font-size: 10px;
+    width:100% !important;;
+    display: block !important;
+  } 
+  #sharediv {
+    padding: 9px 0 8px 0;
+  }  
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+  /* Tablet view */
+  .foot, #share {
+    font-size: 10px;
+  }
+ .foot a, .footpad {
+    padding: 4px 10px;
+  } 
+  #share {
+    width:100% !important;;
+    display: block !important;
+  }  
+  #sharediv {
+    padding: 0 10px;
+    line-height: 6px;     
+  }    
+}
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+  /* Small desktop / ipad view */
+  .foot, #share {
+    font-size: 12px;
+  }
+ .foot a, .footpad {
+    padding: 6px 12px;
+  } 
+  #sharediv {
+    padding: 0 15px;
+    line-height: 8px;     
+  }    
+}
+@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+  /* Medium desktop */
+  .foot , #share {
+    font-size: 16px;
+  }
+ .foot a, .footpad {
+    padding: 10px 20px;
+  }   
+  #sharediv {
+    padding: 0 20px;
+    line-height: 12px; 
+  }      
+}
+@media only screen and (min-width : 1291px) {
+  /* Large desktop */
+  .foot, #share {
+    font-size: 20px; 
+  }
+ .foot a, .footpad {
+    padding: 10px 25px;
+  }  
+  #sharediv {
+    padding: 0 25px;
+    line-height: 16px; 
+  }    
+}

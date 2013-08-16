@@ -1,0 +1,40 @@
+/* Main content layout */
+#copyright {
+	font-style: italic;
+	margin: 0 0 1em 0;
+}
+#news {
+	background-color: #bdd88b;
+	margin: 1em 0 1em 0;
+}
+#vision {
+	margin: 1em 1em 1em 0;
+}
+#vision, #copyright {
+	background-color: #d4e7b0;
+}
+.left-col {
+	width: 60%;
+}
+.right-col {
+	width: 40%;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width : 480px) {
+  /* Smartphone view */
+  .left-col {
+    width: 100%;
+    float:none;
+    clear:both;
+  }
+	.right-col {
+    width: 100%;
+    float:none;
+    clear:both;
+    margin: 1em 0 0 0;
+	}
+	#vision {
+		margin: 1em 0;
+	}	 
+}

@@ -1,0 +1,43 @@
+#exp-art {
+	margin: 1em 1em 0 0;
+}
+#creative, #artist, #gift {
+	margin: 1em 0 0 0;
+}
+#fig-container {
+    width: 100%;
+    max-width: 1000px;
+}
+#portraits, #blog {
+	margin: 1em 0 0 0;
+}
+.left-col {
+	width: 60%;
+}
+.right-col {
+	width: 40%;
+}
+/* MEDIA QUERIES */
+@media only screen and (max-width : 480px) {
+  /* Smartphone view */
+  .left-col {
+    width: 100%;
+    float:none;
+    clear:both;
+  }
+	.right-col {
+    width: 100%;
+    float:none;
+    clear:both;
+    margin: 1em 0 0 0;
+	}
+	#exp-art, #creative {
+		margin: 1em 0 0 0;
+	}	
+	#fig {
+ 		max-width:100%;
+	}		
+	.myButton {
+		width: 100%;
+	}
+}
