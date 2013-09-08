@@ -1,7 +1,7 @@
-#exp-art {
+#artist {
 	margin: 1em 1em 0 0;
 }
-#creative, #artist, #gift {
+#creative, #gift, #art {
 	margin: 1em 0 0 0;
 }
 #fig-container {
@@ -31,7 +31,7 @@
     clear:both;
     margin: 1em 0 0 0;
 	}
-	#exp-art, #creative {
+	#creative, #artist {
 		margin: 1em 0 0 0;
 	}	
 	#fig {
